@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+    id="com.example.cordova.plugin.echo"
+    version="0.0.1">
+    <name>Echo</name>
+    <description>Cordova Echo Plugin</description>
+    <license>Apache 2.0</license>
+    <keywords>cordova,echo</keywords>
+
+
+    <js-module src="www/echo.js" name="echo">
+        <clobbers target="echo" />
+    </js-module>
+
+    <!-- android -->
+    <platform name="android">
+        <config-file target="res/xml/config.xml" parent="/*">
+            <feature name="EchoPlugin" >
+                <param name="android-package" value="com.example.cordova.plugin.echo.EchoPlugin"/>
+            </feature>
+        </config-file>
+
+        <source-file src="src/android/EchoPlugin.java" target-dir="src/com/example/cordova/plugin/echo" />
+    </platform>
+
+</plugin>
